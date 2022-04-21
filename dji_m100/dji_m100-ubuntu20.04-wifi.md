@@ -1,8 +1,9 @@
-# Intel Aero: connection over wifi network
+# DJI-M100 + NUC: connection over wifi network
 
 ## Tools and softwares
 
-- Drone: Intel Aero with Ubuntu 16.04.1 LTS and mavlink-router installed (*pegasus* in our case)
+- Drone: DJI-M100 with Pixhawk FCU
+- Companion computer: Intel NUC with Ubuntu 20.04.2 LTS and mavlink-router installed (*wines-nuc2* in our case)
 - Basestation: Laptop with QGroundControl (*.AppImage* file)
 - Wifi router (*SWARMCONTROL* in our case)
 
