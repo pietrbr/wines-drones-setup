@@ -4,4 +4,13 @@ mavlink-router should be enough to enable the connection and message forwarding 
 
 ## Install
 
-Use `mavlink-router-install.sh` script to install mavlink-router. Before running the bash script, change the parameter of the `[UartEndpoint uart]` section to correspond to your current setup. The `config.sample` script explains in detail how to write the configuration file (the file come from [here](https://github.com/mavlink-router/mavlink-router/blob/master/examples/config.sample)).
+Use `mavlink-router-install.sh` script to install mavlink-router. Before running the bash script, change the parameter of the `[UartEndpoint uart]` section to correspond to your current setup (use command `dmesg | grep tty` to catch current used USB serial port used to connect to FCU). The `config.sample` script explains in detail how to write the configuration file (the file come from [here](https://github.com/mavlink-router/mavlink-router/blob/master/examples/config.sample)).
+
+Once done with the installation, mavlink-router is enabled to run at startup, but it can be run for the current session with the command
+```
+sudo systemctl start mavlink-router.service
+```
+or by starting the daemon with the command
+```
+mavlink-routerd
+```
