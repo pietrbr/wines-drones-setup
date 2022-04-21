@@ -17,7 +17,7 @@ sudo ninja -C build
 sudo ninja -C build install
 
 sudo mkdir /etc/mavlink-router/
-touch main.conf
+sudo touch /etc/mavlink-router/main.conf
 sudo echo "[General]
 TcpServerPort = 5760
 ReportStats = false
@@ -30,7 +30,7 @@ Baud = 921600, 460800, 115200
 
 [UdpEndpoint wifi]
 Mode = Normal
-Address = 192.168.10.183" > main.conf
+Address = 192.168.10.183" > /etc/mavlink-router/main.conf
 
 # enable service at startup and start for current session
 sudo systemctl enable mavlink-router.service
