@@ -13,6 +13,7 @@
 Follow instructions written in this [page](https://github.com/mavlink-router/mavlink-router). It is important to configure the file `/etc/mavlink-router/main.conf` correctly. Check that:
 
 ```conf
+[General]
 TcpServerPort = 5760 # under [General], to open 5760 port for TCP connection
 [UdpEndpoint wifi] # wifi is the name given to the connection
 Address = 192.168.10.183 # IP address of the basestation where QGroundControl is running

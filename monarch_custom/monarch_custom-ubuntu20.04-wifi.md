@@ -2,8 +2,8 @@
 
 ## Tools and softwares
 
-- Drone: DJI-M100 with Pixhawk FCU
-- Companion computer: Intel NUC with Ubuntu 20.04.2 LTS and mavlink-router installed (*wines-nuc2* in our case)
+- Drone: custom 'Monarch' with Pixhawk (?) FCU
+- Companion computer: Intel NUC with Ubuntu 20.04.2 LTS and mavlink-router installed (*wines-nuc8* in our case)
 - Basestation: Laptop with QGroundControl (*.AppImage* file)
 - Wifi router (*SWARMCONTROL* in our case)
 
@@ -20,7 +20,7 @@ TcpServerPort = 5760 # under [General], to open 5760 port for TCP connection
 Address = 192.168.10.183 # IP address of the basestation where QGroundControl is running
 ```
 
-The drone and the basestation must be connected to the same wifi network. `main.conf` is the configuration file for the Alienware basestation and the DJI-M100 drone with the Pixhawk FCU.
+The drone and the basestation must be connected to the same wifi network. `main.conf` is the configuration file for the Alienware basestation and the custom Monarch drone with the FCU.
 
 ### QGroundControl
 
