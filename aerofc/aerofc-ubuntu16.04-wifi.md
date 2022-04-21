@@ -1,20 +1,29 @@
-# Tools and softwares
-- Intel Aero with Ubuntu 16.04.1 LTS and mavlink-router installed (*pegasus* in our case)
-- Laptop with QGroundControl (.AppImage) as basestation
+# Intel Aero connection over wifi network
+
+## Tools and softwares
+
+- Drone: Intel Aero with Ubuntu 16.04.1 LTS and mavlink-router installed (*pegasus* in our case)
+- Basestation: Laptop with QGroundControl (*.AppImage* file)
 - Wifi router (*SWARMCONTROL* in our case)
 
-# Installation guides
-## mavlink-router
-Follow instructions written in this [page](https://bellergy.com/6-install-and-setup-mavlink-router/). It is important to configure the file `/etc/mavlink-router/main.conf` correctly. Check that:
+## Installation guides
+
+### mavlink-router
+
+Follow instructions written in this [page](https://github.com/mavlink-router/mavlink-router). It is important to configure the file `/etc/mavlink-router/main.conf` correctly. Check that:
+
+```conf
+TcpServerPort = 5760 # under [General], to open 5760 port for TCP connection
+[UdpEndpoint wifi] # wifi is the name given to the connection
+Address = 192.168.10.183 # IP address of the basestation where QGroundControl is running
 ```
-TcpServerPort=5760
-[UdpEndpoint wifi]
-Mode = Normal
-Address = 192.168.10.183
-```
-where the IP adrresss is the one of the basestation where QGroundControl is running. The drone and the basestation whould be connected to the same wifi network.
-## QGroundControl
+
+The drone and the basestation must be connected to the same wifi network. `main.conf` is the configuration file for the Alienware basestation and the pegasus drone wih Intel Aero.
+
+### QGroundControl
+
 Follow instructions written in this [page](https://docs.qgroundcontrol.com/master/en/getting_started/download_and_install.html). The connection should establish automatically. If not, it can be established by creating a new configuration in the "Application Settings/Comm Links".
 
-# Common causes of problems
-- Firewall
+## Common causes of problems
+
+- Firewall denies connection
