@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+repo_path=$(pwd)
 sudo apt update
 sudo apt install -y git python3 python3-pip
 
@@ -17,20 +18,8 @@ sudo ninja -C build
 sudo ninja -C build install
 
 sudo mkdir /etc/mavlink-router/
-sudo touch /etc/mavlink-router/main.conf
-sudo echo "[General]
-TcpServerPort = 5760
-ReportStats = false
-
-# Specify USB serial port and Baud rate where the FCU is connected
-# Check USB port with dmesg | grep tty command
-[UartEndpoint uart]
-Device = /dev/ttyACM0
-Baud = 921600, 460800, 115200
-
-[UdpEndpoint wifi]
-Mode = Normal
-Address = 192.168.10.183" > /etc/mavlink-router/main.conf
+cd $repo_path
+sudo cp main.conf /etc/mavlink-router/main.conf
 
 # enable service at startup and start for current session
 sudo systemctl enable mavlink-router.service
